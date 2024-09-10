@@ -1,0 +1,586 @@
+@import "../../styles/mixins.scss";
+
+.header {
+  background: #1c1c1c;
+  width: 100%;
+  @include resl("padding-bottom", 70px);
+  &Top {
+    @include resl("padding-top", 20px);
+    @include resl("padding-bottom", 20px);
+    border-bottom-style: solid;
+    border-bottom-color: #909090;
+    @include resl("border-bottom-width", 1px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &Logo {
+      display: flex;
+      align-items: center;
+    }
+    img {
+      @include resl("width", 43px);
+      @include resl("height", 35.46px);
+    }
+    span {
+      @include resl("height", 27px);
+      @include resl("width", 1px);
+      background: #ffffff;
+      display: inline-block;
+      @include resl("margin-left", 10px);
+      @include resl("margin-right", 8px);
+    }
+    h3 {
+      font-family: "Geist";
+      font-weight: 700;
+      @include resl("font-size", 20px);
+      @include resl("line-height", 24.8px);
+      text-align: center;
+      color: #ffffff;
+    }
+  }
+  &Side {
+    display: flex;
+    align-items: center;
+    @include resl("gap", 50px);
+  }
+  &Auth {
+    display: flex;
+    align-items: center;
+    @include resl("gap", 4px);
+    font-weight: 400;
+    @include resl("font-size", 18px);
+    @include resl("line-height", 24px);
+    color: #ffffff;
+    button {
+      font-family: Involve;
+      color: inherit;
+      &:first-child {
+        font-weight: 600;
+        color: #59d87b;
+      }
+    }
+  }
+  &Social {
+    display: flex;
+    align-items: center;
+    &Item {
+      display: flex;
+      align-items: center;
+      svg {
+        @include resl("width", 24px);
+        @include resl("height", 24px);
+      }
+    }
+  }
+}
+
+.lang {
+  &Button {
+    display: flex;
+    align-items: center;
+    @include resl("gap", 11px);
+    @include resl("padding", 19px);
+    @include resl("padding-top", 7px);
+    @include resl("padding-bottom", 5px);
+    outline-color: #ffffff;
+    outline-style: solid;
+    @include resl("outline-width", 1px);
+    @include resl("border-radius", 20px);
+    h3 {
+      font-family: "Involve";
+      @include resl("font-size", 18px);
+      @include resl("line-height", 24px);
+      font-weight: 700;
+      text-align: left;
+      color: #49d46f;
+    }
+    svg {
+      @include resl("width", 12px);
+      @include resl("height", 6px);
+    }
+  }
+}
+
+.main {
+  margin: auto;
+  @include resl("padding-top", 60px);
+  @include resl("padding-bottom", 100px);
+  @include resl("max-width", 830px);
+  &Top {
+    display: flex;
+    align-items: flex-start;
+    @include resl("gap", 8px);
+  }
+  &SubTitle {
+    display: inline-block;
+    font-family: "Halvar";
+    @include resl("font-size", 55px);
+    @include resl("line-height", 64px);
+    @include resl("max-width", 637px);
+    font-weight: 500;
+    text-align: left;
+    color: #e2e2e2;
+    text-transform: uppercase;
+    &Image {
+      @include resl("margin-top", 30px);
+      svg {
+        @include resl("width", 108px);
+        @include resl("height", 85px);
+      }
+    }
+  }
+  &Title {
+    @include resl("margin-top", 20px);
+    position: relative;
+    span {
+      display: block;
+      font-family: "Halvar";
+      @include resl("font-size", 100px);
+      @include resl("line-height", 115.8px);
+      font-weight: 700;
+      text-transform: uppercase;
+      text-align: left;
+      color: #ffffff;
+      text-align: center;
+      transform: rotate(2deg) translateX(-5px);
+      padding-top: 10px;
+      @include resl("padding-top", 8px);
+      position: relative;
+      &::after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        @include resl("right", 32px);
+        transform: translateY(-42%) rotate(2deg);
+        @include resl("height", 70px);
+        background-color: #ffffff;
+        @include resl("width", 3px);
+      }
+    }
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      transform: scaleY(1.25);
+    }
+  }
+  &Bottom {
+    @include resl("margin-top", 35px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &Btn {
+    display: flex;
+    align-items: center;
+    @include resl("gap", 14px);
+    @include resl("padding-top", 19px);
+    @include resl("padding-bottom", 17px);
+    @include resl("padding-left", 32px);
+    @include resl("padding-right", 29px);
+    @include resl("border-radius", 40px);
+    background-color: #2272d4;
+    h3 {
+      font-family: "Involve";
+      font-weight: 500;
+      @include resl("font-size", 18px);
+      @include resl("line-height", 24px);
+      text-align: left;
+      color: #ffffff;
+    }
+    svg {
+      @include resl("width", 18px);
+      @include resl("height", 18px);
+    }
+  }
+  &Text {
+    @include resl("max-width", 421px);
+    font-family: "Involve";
+    font-weight: 400;
+    @include resl("font-size", 16px);
+    @include resl("line-height", 22px);
+    @include resl("letter-spacing", 0.5px);
+    text-align: left;
+    color: #ffffff;
+  }
+}
+
+.why {
+  @include resl("margin-top", -70px);
+  @include resl("border-top-left-radius", 40px);
+  @include resl("border-top-right-radius", 40px);
+  background: #f9f9f9;
+  @include resl("padding-top", 80px);
+  @include resl("padding-bottom", 145px);
+  &Title {
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Halvar";
+    font-weight: 700;
+    @include resl("font-size", 65px);
+    @include resl("line-height", 75px);
+    @include resl("gap", 20px);
+    span {
+      display: inline-block;
+      @include resl("padding", 58px);
+      @include resl("padding-top", 19px);
+      @include resl("padding-bottom", 20px);
+      @include resl("border-radius", 40px);
+      border-style: solid;
+      border-color: #333333;
+      @include resl("border-width", 1px);
+      font-family: "Involve";
+      font-weight: 500;
+      @include resl("font-size", 24px);
+      @include resl("line-height", 32px);
+      text-align: center;
+    }
+  }
+  &Content {
+    @include resl("margin-top", 50px);
+    display: flex;
+    @include resl("gap", 20px);
+    &Left {
+      display: flex;
+      flex-direction: column;
+      @include resl("gap", 20px);
+    }
+    &Right {
+      display: flex;
+      flex-direction: column;
+      @include resl("gap", 16px);
+      &Text {
+        @include resl("margin-top", 4px);
+        font-family: "Involve";
+        font-weight: 400;
+        @include resl("font-size", 16px);
+        @include resl("line-height", 22px);
+        @include resl("letter-spacing", 0.5px);
+        text-align: left;
+        span {
+          font-weight: 600;
+        }
+      }
+    }
+    &Center {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 20px;
+      @include resl("height", 420px);
+    }
+    &Item {
+      background: #ffffff;
+      @include resl("width", 420px);
+      @include resl("border-radius", 20px);
+      @include resl("padding-left", 30px);
+      @include resl("padding-right", 30px);
+      box-shadow: 4px 4px 4px 0px #bababa40;
+      position: relative;
+      &Title {
+        font-family: "Geist";
+        font-weight: 500;
+        @include resl("font-size", 20px);
+        @include resl("line-height", 24.8px);
+        text-align: left;
+        text-transform: uppercase;
+      }
+      &Image {
+        display: inline-block;
+        position: absolute;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &Text {
+        @include resl("margin-top", 15px);
+        font-family: "Involve";
+        @include resl("font-size", 16px);
+        @include resl("line-height", 22px);
+        font-weight: 400;
+        @include resl("letter-spacing", 0.5px);
+        text-align: left;
+      }
+      &.first {
+        @include resl("padding-top", 52px);
+        @include resl("padding-bottom", 43px);
+        span {
+          @include resl("width", 147px);
+          @include resl("height", 45px);
+          @include resl("top", 24px);
+          @include resl("right", 63px);
+        }
+      }
+      &.second {
+        @include resl("padding-top", 125px);
+        @include resl("padding-bottom", 35px);
+        span {
+          @include resl("width", 312px);
+          @include resl("height", 120px);
+          @include resl("top", 16px);
+          @include resl("left", 40px);
+        }
+      }
+      &.third {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+        @include resl("padding-top", 259px);
+        @include resl("padding-bottom", 57px);
+        span {
+          @include resl("width", 245px);
+          @include resl("height", 180.5px);
+          @include resl("top", 44px);
+          @include resl("left", 87px);
+        }
+      }
+      &.fourth {
+        @include resl("padding-top", 37px);
+        @include resl("padding-bottom", 30px);
+        span {
+          @include resl("width", 168px);
+          @include resl("height", 24px);
+          @include resl("top", 37px);
+          @include resl("right", 49px);
+        }
+      }
+      &.fifth {
+        @include resl("padding-top", 45px);
+        @include resl("padding-bottom", 30px);
+        span {
+          @include resl("width", 158px);
+          @include resl("height", 73px);
+          @include resl("top", 4px);
+          @include resl("right", 31px);
+        }
+      }
+    }
+  }
+}
+
+.features {
+  @include resl("margin-top", -65px);
+  @include resl("border-top-left-radius", 40px);
+  @include resl("border-top-right-radius", 40px);
+  @include resl("padding-top", 60px);
+  @include resl("padding-bottom", 154px);
+  background: #1c1c1c;
+  &Title {
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Halvar";
+    font-weight: 700;
+    @include resl("font-size", 65px);
+    @include resl("line-height", 75px);
+    @include resl("gap", 20px);
+    color: #ffffff;
+    span {
+      display: inline-block;
+      @include resl("padding", 58px);
+      @include resl("padding-top", 19px);
+      @include resl("padding-bottom", 20px);
+      @include resl("border-radius", 40px);
+      border-style: solid;
+      border-color: #ffffff;
+      @include resl("border-width", 1px);
+      font-family: "Involve";
+      font-weight: 500;
+      @include resl("font-size", 24px);
+      @include resl("line-height", 32px);
+      text-align: center;
+    }
+  }
+  &Top {
+    padding-bottom: 50px;
+    @include resl("max-width", 1230px);
+    @include resl("margin-top", 50px);
+
+    &Arrow {
+      @include resl("margin-top", 60px);
+      transform: rotate(-15deg);
+    }
+    &Content {
+      display: flex;
+      justify-content: space-between;
+    }
+    &Box {
+      @include resl("padding-left", 30px);
+      @include resl("padding-right", 30px);
+      @include resl("width", 517px);
+      @include resl("height", 169px);
+      background-image: url("../../../public/frame.png");
+      background-position: center;
+      background-size: contain;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &:last-child {
+        transform: rotate(0.72deg);
+      }
+      &Item {
+        font-family: "Halvar";
+        font-weight: 500;
+        @include resl("font-size", 60px);
+        @include resl("line-height", 70px);
+        text-align: left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include resl("height", 120px);
+        @include resl("width", 120px);
+        border-radius: 50%;
+        background: linear-gradient(180deg, #49d46f 0%, #25be9f 100%);
+        color: #ffffff;
+      }
+    }
+    &Texts {
+      display: flex;
+      justify-content: space-between;
+      @include resl("gap", 70px);
+      @include resl("margin-top", 36px);
+      &Item {
+        font-family: "Involve";
+        font-weight: 400;
+        @include resl("font-size", 16px);
+        @include resl("line-height", 22px);
+        @include resl("letter-spacing", 0.5px);
+        text-align: left;
+        color: #ffffff;
+        &.middle {
+          margin-left: 40px;
+        }
+      }
+    }
+  }
+  &Content {
+    @include resl("margin-top", 64px);
+    &Header {
+      display: flex;
+      @include resl("gap", 431px);
+      align-items: center;
+    }
+    &Button {
+      font-family: "Involve";
+      font-weight: 400;
+      @include resl("font-size", 16px);
+      @include resl("line-height", 21.28px);
+      @include resl("padding", 14.5px);
+      @include resl("padding-left", 56px);
+      @include resl("padding-right", 56px);
+      @include resl("border-radius", 40px);
+      @include resl("border-width", 0.5px);
+      border-style: solid;
+      border-color: #ffffff;
+      text-align: center;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+    &Title {
+      font-family: "Halvar";
+      font-weight: 700;
+      @include resl("font-size", 22px);
+      @include resl("line-height", 25.48px);
+      text-align: left;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+  }
+  &List {
+    @include resl("margin-top", 30px);
+    border-color: #909090;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    @include resl("border-top-width", 1px);
+    @include resl("border-bottom-width", 1px);
+    display: flex;
+    flex-direction: column;
+    &Item {
+      border-color: #909090;
+      border-bottom-style: solid;
+      @include resl("border-bottom-width", 1px);
+      @include resl("padding-bottom", 30px);
+      &Top {
+        @include resl("padding-top", 30px);
+        display: flex;
+        cursor: pointer;
+      }
+      &Content {
+        @include resl("letter-spacing", 0.5px);
+        @include resl("margin-left", 715px);
+        p {
+          @include resl("padding-top", 15px);
+          font-family: "Involve";
+          font-weight: 400;
+          @include resl("font-size", 16px);
+          @include resl("line-height", 22px);
+          text-align: left;
+          color: #ffffff;
+        }
+      }
+      &Num {
+        @include resl("margin-right", 15px);
+        font-family: "Halvar";
+        @include resl("font-size", 22px);
+        @include resl("line-height", 25.48px);
+        @include resl("max-width", 700px);
+        width: 100%;
+        font-weight: 800;
+        text-align: left;
+        color: #1764db;
+        @include resl("padding-left", 20px);
+      }
+      &Box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        h3 {
+          font-family: "Halvar";
+          text-transform: uppercase;
+          font-weight: 300;
+          @include resl("font-size", 20px);
+          @include resl("line-height", 22px);
+          letter-spacing: 0.03em;
+          text-align: left;
+          color: #ffffff;
+        }
+        svg {
+          @include resl("width", 20px);
+          @include resl("height", 11px);
+        }
+      }
+    }
+  }
+  &Button {
+    display: flex;
+    @include resl("gap", 14px);
+    align-items: center;
+    margin: auto;
+    @include resl("margin-top", 50px);
+    background: #2272d4;
+    @include resl("padding-top", 19px);
+    @include resl("padding-bottom", 17px);
+    @include resl("padding-left", 32px);
+    @include resl("padding-right", 29px);
+    @include resl("border-radius", 40px);
+    h3 {
+      font-family: "Involve";
+      font-weight: 500;
+      @include resl("font-size", 18px);
+      @include resl("line-height", 24px);
+      text-align: center;
+      color: #ffffff;
+    }
+    svg {
+      @include resl("height", 18px);
+      @include resl("width", 18px);
+    }
+  }
+}
