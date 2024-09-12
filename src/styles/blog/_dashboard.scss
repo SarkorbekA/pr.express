@@ -177,4 +177,24 @@
             }
         }
     }
+
+    &__border {
+      border-top: .5px solid #626262;
+    }
+
+    &__relative-50 {
+      right: 50px;
+    }
+
+    &__relative-70 {
+      right: 70px;
+    }
+
+    &__relative-77 {
+      right: 77px;
+    }
+
+    &__relative-100 {
+      right: 100px;
+    }
 }
