@@ -1,5 +1,6 @@
 import React from "react";
 import dollar from "../../assets/imgs/icons/dollar.svg";
+import Image from "next/image";
 function DashboardTable({ columns, row }) {
   return (
     <div className="table w-full">
@@ -27,8 +28,8 @@ function DashboardTable({ columns, row }) {
                 <td scope="col">
                   <div className="flex items-center">
                     {el?.sum}{" "}
-                    <img
-                      className="w-[7px] h-[16px] ms-1"
+                    <Image
+                      className={el?.sum ? "w-[7px] h-[16px] ms-1" : "hidden"}
                       src={dollar}
                       alt=""
                     />

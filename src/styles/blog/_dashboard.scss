@@ -171,10 +171,10 @@
                 padding: 20px 0;
             }
     
-            // td:last-child {
-            //     display: flex;
-            //     justify-content: flex-end;
-            // }
+            td:last-child {
+                display: flex;
+                justify-content: flex-end;
+            }
         }
     }
 }
