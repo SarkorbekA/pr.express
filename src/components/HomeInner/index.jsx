@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import styles from './HomeInner.module.scss'
 import Link from 'next/link';
-import { ST } from 'next/dist/shared/lib/utils';
 
 const HomeInner = () => {
   const features = [

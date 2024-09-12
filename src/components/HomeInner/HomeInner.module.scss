@@ -51,13 +51,15 @@
     display: flex;
     align-items: center;
     @include resl("gap", 4px);
-    font-weight: 400;
-    @include resl("font-size", 18px);
-    @include resl("line-height", 24px);
     color: #ffffff;
     button {
-      font-family: Involve;
+      font-family: "Involve";
+      @include resl("font-size", 18px);
+      @include resl("line-height", 24px);
+      font-weight: 400;
+      text-align: left;
       color: inherit;
+      font-family: Involve;
       &:first-child {
         font-weight: 600;
         color: #59d87b;
