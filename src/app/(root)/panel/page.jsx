@@ -287,6 +287,7 @@ function page() {
               ]}
             />
           </div>
+          <Button className="w-full btn-more" text="Показать еще" />
         </section>
       </main>
       <Footer />
