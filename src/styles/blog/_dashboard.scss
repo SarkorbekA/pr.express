@@ -48,6 +48,17 @@
 
     &__chart {
         flex: 1;
+
+        canvas {
+          height: 240px !important;
+          width: 100% !important;
+        }
+    }
+
+    &__chart-btn {
+      font-size: 14px;
+      font-weight: 400;
+      color: #626262;
     }
 
     .form-group {

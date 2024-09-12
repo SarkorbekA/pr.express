@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { Button, Text, Title } from "@/ui";
 import dollar from "@/assets/imgs/icons/dollar.svg";
 import material from "@/assets/imgs/icons/material-symbols-light_article-shortcut-outline 1.svg";
@@ -8,13 +9,45 @@ import icon from "@/assets/imgs/icons/Vector.svg";
 import deleteIcon from "@/assets/imgs/icons/delete.svg";
 import refresh from "@/assets/imgs/icons/arrow-refresh-06.svg";
 import done from "@/assets/imgs/icons/done.svg";
+import blueEllipse from "@/assets/imgs/icons/blue.svg";
 import DashboardTable from "@/components/Table/DashboardTable";
 import "@/styles/style.scss";
 import Image from "next/image";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import TopBar from "@/components/TopBar";
+import LineChart from "@/components/Charts/Chart";
 function page() {
+  const [chartData, setChartData] = useState(getData("Сегодня"));
+
+  function getData(period) {
+    switch (period) {
+      case "Сегодня":
+        return { labels: ["1", "2", "3", "4"], data: [65, 59, 10, 70] };
+      case "Вчера":
+        return {
+          labels: ["1", "2", "3", "4", "5"],
+          data: [65, 59, 80, 86, 40],
+        };
+      case "Неделя":
+        return {
+          labels: ["1", "2", "3", "4", "5", "6"],
+          data: [65, 59, 80, 81, 56, 20],
+        };
+      case "Месяц":
+        return {
+          labels: ["1", "2", "3", "4", "5", "6", "7"],
+          data: [65, 59, 80, 81, 56, 55, 40],
+        };
+      case "Год":
+        return {
+          labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
+          data: [65, 59, 80, 81, 56, 55, 40, 60, 70],
+        };
+      default:
+        return { labels: ["1", "2", "3", "4"], data: [65, 59, 10, 70] };
+    }
+  }
   return (
     <div>
       <Header />
@@ -22,11 +55,23 @@ function page() {
       <main>
         <section className="dashboard w-full container-box">
           <div className="primary w-full p-7 pr-6 h-[388px]">
-            <Title
-              className="dashboard__title"
-              as="h2"
-              text="Приборная панель"
-            />
+            <div className="flex items-center justify-between">
+              <Title
+                className="dashboard__title"
+                as="h2"
+                text="Приборная панель"
+              />
+              <div className="mb-[30px]">
+                <div className="flex items-center">
+                  <Text
+                    className="me-2 text-[#6a6a6a] font-medium"
+                    as="p"
+                    text="Ресурсы"
+                  />
+                  <Image src={blueEllipse} />
+                </div>
+              </div>
+            </div>
             <div className="flex justify-between gap-10">
               <div className="w-1/2 flex flex-col justify-between">
                 <div className="flex justify-between w-[90%]">
@@ -72,7 +117,40 @@ function page() {
                 </div>
               </div>
               <div className="dashboard__chart">
-                <Image src={chart} alt="" />
+                {/* <Image src={chart} alt="" /> */}
+                <div className="flex items-center justify-between gap-2 mb-2.5">
+                  <button
+                    className="dashboard__chart-btn"
+                    onClick={() => setChartData(getData("Сегодня"))}
+                  >
+                    Сегодня
+                  </button>
+                  <button
+                    className="dashboard__chart-btn"
+                    onClick={() => setChartData(getData("Вчера"))}
+                  >
+                    Вчера
+                  </button>
+                  <button
+                    className="dashboard__chart-btn"
+                    onClick={() => setChartData(getData("Неделя"))}
+                  >
+                    Неделя
+                  </button>
+                  <button
+                    className="dashboard__chart-btn"
+                    onClick={() => setChartData(getData("Месяц"))}
+                  >
+                    Месяц
+                  </button>
+                  <button
+                    className="dashboard__chart-btn"
+                    onClick={() => setChartData(getData("Год"))}
+                  >
+                    Год
+                  </button>
+                </div>
+                <LineChart chartData={chartData} />
               </div>
             </div>
           </div>
