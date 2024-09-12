@@ -224,6 +224,7 @@
     @include resl("font-size", 65px);
     @include resl("line-height", 75px);
     @include resl("gap", 20px);
+    color: #626262;
     span {
       display: inline-block;
       @include resl("padding", 58px);
@@ -405,6 +406,10 @@
     &Arrow {
       @include resl("margin-top", 60px);
       transform: rotate(-15deg);
+      svg {
+        @include resl("width", 101px);
+        @include resl("height", 53px);
+      }
     }
     &Content {
       display: flex;
@@ -463,17 +468,18 @@
     @include resl("margin-top", 64px);
     &Header {
       display: flex;
-      @include resl("gap", 431px);
       align-items: center;
     }
     &Button {
+      @include resl("margin-right", 431px);
       font-family: "Involve";
       font-weight: 400;
+      @include resl("width", 284px);
       @include resl("font-size", 16px);
       @include resl("line-height", 21.28px);
       @include resl("padding", 14.5px);
-      @include resl("padding-left", 56px);
-      @include resl("padding-right", 56px);
+      @include resl("padding-left", 55px);
+      @include resl("padding-right", 55px);
       @include resl("border-radius", 40px);
       @include resl("border-width", 0.5px);
       border-style: solid;
@@ -512,9 +518,15 @@
         cursor: pointer;
       }
       &Content {
-        @include resl("letter-spacing", 0.5px);
-        @include resl("margin-left", 715px);
+        display: flex;
+        span {
+          @include resl("min-width", 40px);
+          display: inline-block;
+          @include resl("margin-right", 15px);
+        }
         p {
+          @include resl("margin-left", 655px);
+          @include resl("letter-spacing", 0.5px);
           @include resl("padding-top", 15px);
           font-family: "Involve";
           font-weight: 400;
@@ -525,18 +537,17 @@
         }
       }
       &Num {
-        @include resl("margin-right", 15px);
         font-family: "Halvar";
         @include resl("font-size", 22px);
         @include resl("line-height", 25.48px);
-        @include resl("max-width", 700px);
-        width: 100%;
+        @include resl("min-width", 40px);
         font-weight: 800;
         text-align: left;
         color: #1764db;
-        @include resl("padding-left", 20px);
+        @include resl("margin-left", 20px);
       }
       &Box {
+        @include resl("margin-left", 650px);
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -547,7 +558,7 @@
           font-weight: 300;
           @include resl("font-size", 20px);
           @include resl("line-height", 22px);
-          letter-spacing: 0.03em;
+          @include resl("letter-spacing", 0.5px);
           text-align: left;
           color: #ffffff;
         }
@@ -581,6 +592,114 @@
     svg {
       @include resl("height", 18px);
       @include resl("width", 18px);
+    }
+  }
+}
+
+.feedback {
+  @include resl("margin-top", -70px);
+  @include resl("border-top-left-radius", 40px);
+  @include resl("border-top-right-radius", 40px);
+  background: #f9f9f9;
+  @include resl("padding-top", 65px);
+  @include resl("padding-bottom", 145px);
+  &Header {
+    display: flex;
+    align-items: center;
+    @include resl("gap", 48px);
+  }
+  &Arrows {
+    display: flex;
+    align-items: center;
+    @include resl("gap", 30px);
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include resl("width", 80px);
+      @include resl("height", 80px);
+      border-radius: 50%;
+      &:first-child {
+        border-color: #333333;
+        border-style: solid;
+        @include resl("border-width", 1px);
+      }
+      &:last-child {
+        background-color: #2272d4;
+        border-color: #2272d4;
+        border-style: solid;
+        @include resl("border-width", 1px);
+      }
+    }
+  }
+  &Title {
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    font-family: "Halvar";
+    color: #626262;
+    font-weight: 700;
+    @include resl("font-size", 65px);
+    @include resl("line-height", 75px);
+    @include resl("gap", 20px);
+    span {
+      display: inline-block;
+      @include resl("padding", 58px);
+      @include resl("padding-top", 19px);
+      @include resl("padding-bottom", 20px);
+      @include resl("border-radius", 40px);
+      border-style: solid;
+      border-color: #333333;
+      @include resl("border-width", 1px);
+      font-family: "Involve";
+      font-weight: 500;
+      @include resl("font-size", 24px);
+      @include resl("line-height", 32px);
+      text-align: center;
+    }
+  }
+  &Content {
+    @include resl("margin-top", 50px);
+    display: flex;
+    @include resl("gap", 20px);
+    &Item {
+      background-color: #ffffff;
+      @include resl("border-radius", 20px);
+      // flex: 1 / 3;
+      width: 100%;
+      @include resl("height", 420px);
+      box-shadow: 4px 4px 4px 0px #bababa40;
+      @include resl("padding-top", 30px);
+      @include resl("padding-bottom", 30px);
+      @include resl("padding-left", 40px);
+      @include resl("padding-right", 48px);
+      &Stars {
+        @include resl("margin-bottom", 25px);
+        display: flex;
+        @include resl("gap", 10px);
+        svg {
+          @include resl("height", 29px);
+          @include resl("width", 28px);
+        }
+      }
+      h3 {
+        @include resl("margin-top", 25px);
+        font-family: "Involve";
+        font-size: 20px;
+        @include resl("font-size", 20px);
+        @include resl("line-height", 26.6px);
+        font-weight: 600;
+        text-align: left;
+      }
+      p {
+        @include resl("margin-top", 10px);
+        font-family: "Involve";
+        @include resl("font-size", 16px);
+        @include resl("line-height", 22px);
+        font-weight: 400;
+        @include resl("letter-spacing", 0.5px);
+        text-align: left;
+      }
     }
   }
 }
