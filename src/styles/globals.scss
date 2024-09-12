@@ -11,6 +11,13 @@ body {
   color: #333333;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  &::-webkit-scrollbar {
+    width: 4px;
+    background: #1c1c1c;
+    &-thumb {
+      background: #ffffff;
+    }
+  }
 }
 
 li {

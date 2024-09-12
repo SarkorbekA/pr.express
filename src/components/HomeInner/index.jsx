@@ -11,7 +11,22 @@ const HomeInner = () => {
     { number: '04', title: 'публикация:', description: 'Ознакомьтесь с нашими тарифами и выберите тот, который подходит именно вам' },
   ];
 
-  return <>
+  const question = [
+    { number: '01', title: 'Выберите пакет', description: 'Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет оценить значение инновационных методов управления процессами. Наше дело не так однозначно, как может показаться: высококачественный прототип будущего проекта представляет собой интересный эксперимент проверки глубокомысленных рассуждений' },
+    { number: '02', title: 'Подготовьте материал', description: 'Ознакомьтесь с нашими тарифами и выберите тот, который подходит именно вам' },
+    { number: '03', title: 'Отправьте нам', description: 'Ознакомьтесь с нашими тарифами и выберите тот, который подходит именно вам' },
+    { number: '04', title: 'публикация:', description: 'Ознакомьтесь с нашими тарифами и выберите тот, который подходит именно вам' },
+  ];
+
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleContent = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+
+
+  return <div className={styles.wrapper}>
     <div className={styles.header}>
       <div className="container">
         <div className={styles.headerTop}>
@@ -78,7 +93,7 @@ const HomeInner = () => {
       </div>
     </div>
     <section className={styles.why}>
-      <h2 className={styles.whyTitle}>
+      <h2 className={styles.title}>
         Почему
         <span>выбирают</span>
         нас?
@@ -269,8 +284,167 @@ const HomeInner = () => {
       </div>
 
     </section>
-  </>
+    <section className={styles.question}>
+      <h2 className={styles.title}>
+        часто
+        <span>задаваемые</span>
+        вопросы
+      </h2>
+      <div className="container">
+        <div className={styles.questionContent}>
+          <ul className={styles.questionList}>
+            {question.map((question, index) => (
+              <QuestionItem
+                key={index}
+                number={question.number}
+                title={question.title}
+                description={question.description}
+                isOpen={openIndex === index}
+                isNextOpen={openIndex === (index - 1)}
+                toggleContent={() => toggleContent(index)}
+              />
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer className={styles.footer}>
+      <div className={`container ${styles.container}`}>
+        <div className={styles.form}>
+          <div className={styles.formLeft}>
+            <h2 className={styles.formTitle}>Готовы начать?</h2>
+            <div className={styles.formLeftBottom}>
+              <h3>Присоединяйтесь к нам прямо сейчас!</h3>
+              <div className={styles.formLeftBottomIcon}>
+                <svg width="119" height="30" viewBox="0 0 119 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2.00071 16.4392C2.00071 16.4392 26.9188 36.1861 51.5006 22.1302C76.0824 8.07433 99.6889 13.3263 116.223 22.1302M116.223 22.1302L96.7506 25.6003M116.223 22.1302L106.658 2.35859" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <form className={styles.formContent}>
+            <label htmlFor="name">
+              <input required className={styles.formInput} placeholder='Ваше имя' id='name' type="text" />
+            </label>
+            <label htmlFor="email">
+              <input required className={styles.formInput} id='email' placeholder='Ваша эл. почта' type="email" />
+            </label>
+            <label htmlFor="privacy" className={styles.formPrivacy}>
+              <input type="checkbox" name="privacy" id="privacy" />
+              <h3>Даю согласие на <a href="">обработку персональных данных</a>  в соответствии с <a href="">политикой конфиденциальности</a></h3>
+            </label>
+            <button className={styles.formButton} type='submut'>
+              отправить
+            </button>
+          </form>
+        </div>
+        <div className={styles.footerContent}>
+          <ul className={styles.footerPages}>
+            <li className={styles.footerPagesItem}>
+              <a href="/">Главная</a>
+            </li>
+            <li className={styles.footerPagesItem}>
+              <a href="/">Ресурсы</a>
+            </li>
+            <li className={styles.footerPagesItem}>
+              <a href="/">Публикации</a>
+            </li>
+          </ul>
+          <div className={styles.footerText}>
+            Если у вас есть вопросы или предложения, не стесняйтесь обращаться к нам:
+          </div>
+          <ul className={styles.footerSocials}>
+            <li className={styles.footerSocialsItem}>
+              <a href="mailto:support@prexpress.io">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="11.5" stroke="white" />
+                  <path d="M15.1759 11.9994C15.1759 12.8418 14.8412 13.6498 14.2455 14.2455C13.6498 14.8412 12.8419 15.1758 11.9994 15.1758C11.157 15.1758 10.349 14.8412 9.75332 14.2455C9.15762 13.6498 8.82296 12.8418 8.82296 11.9994C8.82296 11.1569 9.15762 10.349 9.75332 9.75327C10.349 9.15757 11.157 8.8229 11.9994 8.8229C12.8419 8.8229 13.6498 9.15757 14.2455 9.75327C14.8412 10.349 15.1759 11.1569 15.1759 11.9994ZM15.1759 11.9994C15.1759 13.169 15.8867 14.117 16.7641 14.117C17.6415 14.117 18.3524 13.169 18.3524 11.9994C18.3524 10.5296 17.8427 9.10528 16.9103 7.96913C15.9779 6.83298 14.6803 6.05528 13.2388 5.76855C11.7972 5.48183 10.3009 5.7038 9.00463 6.39666C7.7084 7.08952 6.69251 8.2104 6.13006 9.56831C5.5676 10.9262 5.49339 12.4371 5.92005 13.8436C6.34672 15.2501 7.24787 16.4652 8.46996 17.2817C9.69205 18.0983 11.1595 18.4658 12.6222 18.3218C14.0849 18.1777 15.4524 17.5309 16.4917 16.4916M15.1759 11.9994V9.35232" stroke="white" stroke-linecap="round" />
+                </svg>
+                <h3>support@prexpress.io</h3>
+              </a>
+            </li>
+            <li className={styles.footerSocialsItem}>
+              <a href="mailto:support@prexpress.io">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="11.5" stroke="white" />
+                  <path d="M17.5239 7.39774L17.5362 7.39347L17.5484 7.38856C17.6208 7.35927 17.6768 7.35496 17.7117 7.35847C17.7456 7.36187 17.758 7.37186 17.7603 7.37387L17.7604 7.37393C17.7616 7.37493 17.7728 7.38408 17.7804 7.41968C17.7891 7.45985 17.7937 7.54005 17.7576 7.66941L17.755 7.6788L17.7528 7.68829L15.6842 16.4063L15.6838 16.4082C15.6582 16.5181 15.6267 16.579 15.6052 16.6093C15.5864 16.6357 15.5762 16.6383 15.5762 16.6383C15.5722 16.6399 15.4895 16.6673 15.2752 16.5669L12.1523 14.5041L11.8353 14.2947L11.5486 14.544L10.2987 15.6309L10.4284 13.8981L16.1051 9.31645C16.1904 9.24848 16.375 9.08239 16.3861 8.81699C16.4016 8.44909 16.1056 8.28675 15.9649 8.24355C15.8166 8.19801 15.6656 8.20639 15.5466 8.22843C15.4186 8.25216 15.2855 8.29938 15.1568 8.36942L15.1568 8.36937L15.1501 8.37315L8.11423 12.343L5.38854 11.5826L17.5239 7.39774ZM15.7399 9.21025C15.7399 9.21032 15.7386 9.2105 15.7359 9.21056C15.7387 9.21021 15.74 9.21018 15.7399 9.21025ZM15.4836 8.53301C15.4836 8.53299 15.4833 8.53328 15.4826 8.53387L15.4836 8.53301Z" fill="white" stroke="white" />
+                </svg>
+                <h3>Telegram</h3>
+              </a>
+            </li>
+          </ul>
+          <ul className={styles.footerPrivacy}>
+            <li className={styles.footerPrivacyItem}>
+              <a href="#">Политика конфиденциальности</a>
+            </li>
+            <li className={styles.footerPrivacyItem}>
+              <a href="#">Лицензионный договор</a>
+            </li>
+          </ul>
+        </div>
+        <div className={styles.footerLine}></div>
+        <div className={styles.footerCopyright}>Copyright © 2023 PR Express. Все права защищены.</div>
+      </div>
+    </footer>
+  </div>
 }
+
+const QuestionItem = ({ number, title, description, isOpen, isNextOpen, toggleContent }) => {
+  const contentRef = useRef(null);
+
+  return (
+    <li
+      style={{
+        borderColor: isNextOpen || isOpen ? "transparent" : "#646464",
+        borderRadius: isOpen ? "20px" : "0",
+        background: isOpen ? "#ffffff" : "transparent",
+        boxShadow: isOpen ? "4px 4px 4px 0px #BABABA40" : "none",
+      }}
+      className={`${styles.questionListItem} ${isOpen ? styles.active : ""}`}
+    >
+      <div className={styles.questionListItemTop} onClick={toggleContent}>
+        <div className={styles.questionListItemBox}>
+          <h4 className={styles.questionListItemNum}>{number}</h4>
+          <h3 className={styles.questionListItemTitle}>{title}</h3>
+        </div>
+        <svg
+          style={{
+            transform: isOpen ? "rotate(-180deg)" : "rotate(0)",
+            transition: "0.3s all",
+          }}
+          width="20"
+          height="12"
+          viewBox="0 0 20 12"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1 1L10 10L19 1"
+            stroke="#333333"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+        </svg>
+      </div>
+      <div
+        ref={contentRef}
+        className={styles.questionListItemContent}
+        style={{
+          height: isOpen ? `${contentRef.current.scrollHeight}px` : "0px",
+          overflow: "hidden",
+          transition: "height 0.3s ease",
+        }}
+      >
+        <div className={styles.questionListItemInner}>
+          <p>{description}</p>
+          <div className={styles.questionListItemIcon}>
+            <img src="./smile.png" alt="smile" />
+          </div>
+        </div>
+      </div>
+    </li>
+  );
+};
 
 const FeatureItem = ({ number, title, description }) => {
   const [isOpen, setIsOpen] = useState(false);

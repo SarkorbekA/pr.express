@@ -1,5 +1,9 @@
 @import "../../styles/mixins.scss";
 
+.wrapper {
+  background: #1c1c1c;
+}
+
 .header {
   background: #1c1c1c;
   width: 100%;
@@ -207,6 +211,34 @@
   }
 }
 
+.title {
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Halvar";
+  font-weight: 700;
+  @include resl("font-size", 65px);
+  @include resl("line-height", 75px);
+  @include resl("gap", 20px);
+  color: #626262;
+  span {
+    display: inline-block;
+    @include resl("padding", 58px);
+    @include resl("padding-top", 19px);
+    @include resl("padding-bottom", 20px);
+    @include resl("border-radius", 40px);
+    border-style: solid;
+    border-color: #333333;
+    @include resl("border-width", 1px);
+    font-family: "Involve";
+    font-weight: 500;
+    @include resl("font-size", 24px);
+    @include resl("line-height", 32px);
+    text-align: center;
+  }
+}
+
 .why {
   @include resl("margin-top", -70px);
   @include resl("border-top-left-radius", 40px);
@@ -214,33 +246,6 @@
   background: #f9f9f9;
   @include resl("padding-top", 80px);
   @include resl("padding-bottom", 145px);
-  &Title {
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Halvar";
-    font-weight: 700;
-    @include resl("font-size", 65px);
-    @include resl("line-height", 75px);
-    @include resl("gap", 20px);
-    color: #626262;
-    span {
-      display: inline-block;
-      @include resl("padding", 58px);
-      @include resl("padding-top", 19px);
-      @include resl("padding-bottom", 20px);
-      @include resl("border-radius", 40px);
-      border-style: solid;
-      border-color: #333333;
-      @include resl("border-width", 1px);
-      font-family: "Involve";
-      font-weight: 500;
-      @include resl("font-size", 24px);
-      @include resl("line-height", 32px);
-      text-align: center;
-    }
-  }
   &Content {
     @include resl("margin-top", 50px);
     display: flex;
@@ -602,7 +607,7 @@
   @include resl("border-top-right-radius", 40px);
   background: #f9f9f9;
   @include resl("padding-top", 65px);
-  @include resl("padding-bottom", 145px);
+  @include resl("padding-bottom", 80px);
   &Header {
     display: flex;
     align-items: center;
@@ -701,5 +706,294 @@
         text-align: left;
       }
     }
+  }
+}
+
+.question {
+  background: #f9f9f9;
+  @include resl("padding-bottom", 280px);
+  &Content {
+    @include resl("margin-top", 50px);
+  }
+  &List {
+    display: flex;
+    flex-direction: column;
+    &Item {
+      @include resl("padding", 40px);
+      @include resl("padding-bottom", 30px);
+      @include resl("padding-top", 30px);
+      @include resl("border-radius", 20px);
+      border-top-style: solid;
+      transition:
+        0.2s box-shadow,
+        0.2s background;
+      @include resl("border-top-width", 0.5px);
+      &:last-child {
+        border-bottom-style: solid;
+        @include resl("border-bottom-width", 0.5px);
+      }
+      &Top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & > svg {
+          @include resl("width", 20px);
+          @include resl("height", 12px);
+        }
+      }
+      &Box {
+        display: flex;
+        align-items: center;
+      }
+      &Num {
+        color: #1764db;
+        font-family: "Halvar";
+        font-weight: 800;
+        text-align: left;
+        @include resl("font-size", 22px);
+        @include resl("line-height", 25.48px);
+        @include resl("min-width", 37px);
+      }
+      &Title {
+        text-transform: uppercase;
+        @include resl("margin-left", 37px);
+        font-family: "Involve";
+        font-weight: 500;
+        @include resl("font-size", 20px);
+        @include resl("line-height", 26.6px);
+        text-align: left;
+      }
+      &Content {
+        p {
+          font-family: "Involve";
+          font-weight: 400;
+          @include resl("letter-spacing", 0.5px);
+          @include resl("font-size", 16px);
+          @include resl("line-height", 22px);
+          text-align: left;
+        }
+      }
+      &Inner {
+        @include resl("padding-left", 72px);
+        @include resl("padding-right", 30px);
+        @include resl("margin-top", 20px);
+        @include resl("padding-top", 15px);
+        display: flex;
+        justify-content: space-between;
+        border-color: #333333;
+        border-top-style: solid;
+        @include resl("border-top-width", 0.5px);
+        @include resl("gap", 19px);
+      }
+    }
+  }
+}
+
+.footer {
+  background: #1c1c1c;
+  @include resl("margin-top", -68px);
+  @include resl("border-top-left-radius", 40px);
+  @include resl("border-top-right-radius", 40px);
+  .container {
+    position: relative;
+  }
+  &Content {
+    display: flex;
+    justify-content: space-between;
+    @include resl("gap", 95px);
+    @include resl("padding-top", 308px);
+    @include resl("padding-left", 20px);
+    @include resl("padding-right", 20px);
+    color: #ffffff;
+    @include resl("padding-bottom", 40px);
+  }
+  &Pages {
+    display: flex;
+    flex-direction: column;
+    @include resl("gap", 10px);
+    &Item {
+      a {
+        font-family: "Involve";
+        font-weight: 600;
+        transition: 0.3s all;
+        @include resl("letter-spacing", 0.5px);
+        @include resl("font-size", 18px);
+        @include resl("line-height", 22px);
+        color: #c7c7c7;
+        &:hover {
+          color: #49d46f;
+        }
+      }
+    }
+  }
+  &Text {
+    font-family: "Involve";
+    font-weight: 500;
+    text-align: left;
+    color: #c7c7c7;
+    @include resl("letter-spacing", 0.5px);
+    @include resl("font-size", 18px);
+    @include resl("line-height", 22px);
+    @include resl("max-width", 308px);
+  }
+  &Socials {
+    display: flex;
+    flex-direction: column;
+    @include resl("gap", 15px);
+    &Item {
+      a {
+        display: flex;
+        align-items: center;
+        @include resl("gap", 14px);
+        h3 {
+          text-align: center;
+          font-family: "Involve";
+          font-weight: 500;
+          @include resl("letter-spacing", 0.5px);
+          @include resl("font-size", 18px);
+          @include resl("line-height", 18px);
+          text-align: left;
+          color: #c7c7c7;
+        }
+      }
+    }
+  }
+  &Privacy {
+    display: flex;
+    flex-direction: column;
+    @include resl("gap", 10px);
+    &Item {
+      a {
+        font-family: "Involve";
+        font-weight: 500;
+        @include resl("letter-spacing", 0.5px);
+        @include resl("font-size", 18px);
+        @include resl("line-height", 22px);
+        text-align: left;
+        color: #c7c7c7;
+      }
+    }
+  }
+  &Line {
+    width: 100%;
+    background: #969696;
+    @include resl("height", 1px);
+  }
+  &Copyright {
+    @include resl("padding-left", 20px);
+    @include resl("padding-top", 30px);
+    @include resl("padding-bottom", 30px);
+    font-family: "Involve";
+    font-weight: 500;
+    text-align: left;
+    color: #c7c7c7;
+    @include resl("letter-spacing", 0.5px);
+    @include resl("font-size", 18px);
+    @include resl("line-height", 22px);
+  }
+}
+
+.form {
+  @include resl("max-width", 1300px);
+  width: 100%;
+  position: absolute;
+  @include resl("top", -131px);
+  background: #2272d4;
+  @include resl("border-radius", 40px);
+  @include resl("padding", 103px);
+  @include resl("padding-top", 60px);
+  @include resl("padding-bottom", 35.2px);
+  display: flex;
+  @include resl("gap", 37px);
+  &Title {
+    font-family: "Halvar";
+    @include resl("font-size", 60px);
+    @include resl("line-height", 40px);
+    font-weight: 500;
+    text-align: left;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+  &Left {
+    display: flex;
+    flex-direction: column;
+    @include resl("gap", 216px);
+    &Bottom {
+      align-items: center;
+      @include resl("gap", 40px);
+      display: flex;
+      h3 {
+        font-family: "Involve";
+        font-weight: 600;
+        @include resl("font-size", 22px);
+        @include resl("line-height", 22px);
+        text-align: left;
+        @include resl("letter-spacing", 0.5px);
+        color: #ffffff;
+      }
+      &Icon {
+        svg {
+          @include resl("width", 119px);
+          @include resl("height", 30px);
+        }
+      }
+    }
+  }
+  &Content {
+    @include resl("width", 422px);
+    display: flex;
+    flex-direction: column;
+    @include resl("gap", 30px);
+    label {
+      width: 100%;
+    }
+  }
+  &Input {
+    @include resl("border-radius", 20px);
+    @include resl("padding-left", 30px);
+    height: 58px;
+    outline: none;
+    border: none;
+    width: 100%;
+    font-family: "Involve";
+    @include resl("font-size", 16px);
+    @include resl("line-height", 22px);
+    font-weight: 400;
+    @include resl("letter-spacing", 0.5px);
+  }
+  &Privacy {
+    display: flex;
+    @include resl("gap", 10px);
+    align-items: flex-start;
+    @include resl("margin-top", -10px);
+    h3 {
+      font-family: "Involve";
+      @include resl("font-size", 14px);
+      @include resl("line-height", 18px);
+      font-weight: 500;
+      @include resl("letter-spacing", 0.5px);
+      text-align: left;
+      color: #ffffff;
+      position: relative;
+      @include resl("top", -2px);
+      a {
+        color: inherit;
+        text-decoration: underline;
+      }
+    }
+  }
+  &Button {
+    font-family: "Involve";
+    width: 100%;
+    @include resl("font-size", 18px);
+    @include resl("line-height", 24px);
+    @include resl("border-radius", 40px);
+    @include resl("border-width", 1px);
+    @include resl("height", 58px);
+    border-color: #ffffff;
+    border-style: solid;
+    font-weight: 600;
+    text-align: center;
+    color: #ffffff;
   }
 }
