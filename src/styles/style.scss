@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    overflow-x: hidden;
+    font-family: 'Ivolve' !important;
+    background-color: #f9f9f9;
+}
+  
+  *,
+  ::after,
+  ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ivolve' !important;
+  }
+
+  .primary {
+    background-color: #fff;
+    border: 1px solid #E2E2E2;
+    border-radius: 20px
+  }
+  
+  @import 'fonts';
+  @import 'varables';
+  @import './blog/container';
+  @import './blog/header';
+  @import './blog/sidebar';
+  @import './blog/topbar';
+  @import './blog/card';
+  @import './blog/table';
+  @import './blog/editresources';
+  @import './blog/dashboard';
+  @import './blog/footer';
