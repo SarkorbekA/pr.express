@@ -4,6 +4,7 @@ import russian from "@/assets/imgs/icons/russian-federation.svg";
 import britain from "@/assets/imgs/icons/britain.svg";
 import deleteIcon from "@/assets/imgs/icons/delete.svg";
 import dollar from "@/assets/imgs/icons/dollar.svg";
+import Image from "next/image";
 
 function Sidebar() {
   return (
@@ -46,7 +47,7 @@ function Sidebar() {
                   <label htmlFor="all">Выбрать все</label>
                 </div>
                 <button>
-                  <img src={deleteIcon} alt="" />
+                  <Image src={deleteIcon} alt="" />
                 </button>
               </li>
               <li className="flex items-center justify-between mb-2.5">
@@ -84,7 +85,7 @@ function Sidebar() {
                   <label htmlFor="all2">Выбрать все</label>
                 </div>
                 <button>
-                  <img src={deleteIcon} alt="" />
+                  <Image src={deleteIcon} alt="" />
                 </button>
               </li>
               <li className="flex items-center justify-between mb-2.5">
@@ -122,12 +123,12 @@ function Sidebar() {
           <div className="sidebar__summary flex items-center">
             <p>от</p>
             <input type="number" defaultValue={10} />
-            <img src={dollar} alt="" />
+            <Image src={dollar} alt="" />
           </div>
           <div className="sidebar__summary flex items-center">
             <p>до</p>
             <input type="number" defaultValue={100} />
-            <img src={dollar} alt="" />
+            <Image src={dollar} alt="" />
           </div>
           {/* <ReactSlider
             className="horizontal-slider"
