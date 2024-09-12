@@ -13,7 +13,7 @@ function DashboardTable({ columns, row }) {
                 <th scope="col">{el?.date}</th>
                 <th scope="col">{el?.content}</th>
                 <th scope="col">{el?.ID}</th>
-                <th scope="col">{el?.status}</th>
+                {/* <th scope="col">{el?.status}</th> */}
                 <th scope="col">{el?.action}</th>
               </tr>
             );
@@ -37,7 +37,7 @@ function DashboardTable({ columns, row }) {
                 <td scope="col">{el?.date}</td>
                 <td scope="col">{el?.content}</td>
                 <td scope="col">{el?.ID}</td>
-                <td scope="col">{el?.status}</td>
+                {/* <td scope="col">{el?.status}</td> */}
                 <td scope="col">{el?.action}</td>
               </tr>
             );

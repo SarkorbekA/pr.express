@@ -76,7 +76,7 @@ function page() {
                   date: "01.01.2020 / 15:30:23",
                   ID: "№ 00",
                   action: (
-                    <>
+                    <div className="flex justify-end">
                       <Button
                         className="mr-[22px]"
                         children={
@@ -100,7 +100,7 @@ function page() {
                           />
                         }
                       />
-                    </>
+                    </div>
                   ),
                 },
                 {
@@ -118,7 +118,7 @@ function page() {
                   date: "01.01.2020 / 15:30:23",
                   ID: "№ 00",
                   action: (
-                    <>
+                    <div className="flex justify-end">
                       <Button
                         className="mr-[22px]"
                         children={
@@ -142,7 +142,7 @@ function page() {
                           />
                         }
                       />
-                    </>
+                    </div>
                   ),
                 },
                 {
@@ -160,7 +160,7 @@ function page() {
                   date: "01.01.2020 / 15:30:23",
                   ID: "№ 00",
                   action: (
-                    <>
+                    <div className="flex justify-end">
                       <Button
                         className="mr-[22px]"
                         children={
@@ -184,7 +184,7 @@ function page() {
                           />
                         }
                       />
-                    </>
+                    </div>
                   ),
                 },
                 {
@@ -202,7 +202,7 @@ function page() {
                   date: "01.01.2020 / 15:30:23",
                   ID: "№ 00",
                   action: (
-                    <>
+                    <div className="flex justify-end">
                       <Button
                         className="mr-[22px]"
                         children={
@@ -226,7 +226,7 @@ function page() {
                           />
                         }
                       />
-                    </>
+                    </div>
                   ),
                 },
               ]}

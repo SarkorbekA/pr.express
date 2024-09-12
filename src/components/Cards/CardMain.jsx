@@ -135,11 +135,11 @@ function CardMain() {
               </>
             ),
             action: <>
-                <div className="flex items-center gap-6">
-                    <button><Image src={info} alt="" /></button>
-                    <button><Image src={deleteIcon} alt="" /></button>
-                    <button><Image src={pencil} alt="" /></button>
-                </div>
+              <div className="flex items-center gap-6">
+                <button><Image src={info} alt="" /></button>
+                <button><Image src={deleteIcon} alt="" /></button>
+                <button><Image src={pencil} alt="" /></button>
+              </div>
             </>,
           },
 
@@ -162,11 +162,11 @@ function CardMain() {
               </>
             ),
             action: <>
-                <div className="flex items-center gap-6">
-                    <button><Image src={info} alt="" /></button>
-                    <button><Image src={deleteIcon} alt="" /></button>
-                    <button><Image src={pencil} alt="" /></button>
-                </div>
+              <div className="flex items-center gap-6">
+                <button><Image src={info} alt="" /></button>
+                <button><Image src={deleteIcon} alt="" /></button>
+                <button><Image src={pencil} alt="" /></button>
+              </div>
             </>,
           },
 
@@ -189,11 +189,11 @@ function CardMain() {
               </>
             ),
             action: <>
-                <div className="flex items-center gap-6">
-                    <button><Image src={info} alt="" /></button>
-                    <button><Image src={deleteIcon} alt="" /></button>
-                    <button><Image src={pencil} alt="" /></button>
-                </div>
+              <div className="flex items-center gap-6">
+                <button><Image src={info} alt="" /></button>
+                <button><Image src={deleteIcon} alt="" /></button>
+                <button><Image src={pencil} alt="" /></button>
+              </div>
             </>,
           },
         ]}

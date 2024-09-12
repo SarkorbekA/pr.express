@@ -16,7 +16,7 @@ function Sidebar() {
           <label className="me-2.5" htmlFor="ru">
             Русский
           </label>
-          <img src={russian} alt="russian" />
+          <img src={russian.src} alt="russian" />
         </div>
         <div className="flex items-center">
           <input type="radio" id="eng" name="fav_language" defaultValue="eng" />
@@ -24,7 +24,7 @@ function Sidebar() {
           <label className="me-2.5" htmlFor="eng">
             Английский
           </label>
-          <img src={britain} alt="britain" />
+          <img src={britain.src} alt="britain" />
         </div>
       </div>
 
