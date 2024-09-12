@@ -16,7 +16,7 @@ function Sidebar() {
           <label className="me-2.5" htmlFor="ru">
             Русский
           </label>
-          <img src={russian} alt="russian" />
+          <Image src={russian} alt="russian" />
         </div>
         <div className="flex items-center">
           <input type="radio" id="eng" name="fav_language" defaultValue="eng" />
@@ -24,7 +24,7 @@ function Sidebar() {
           <label className="me-2.5" htmlFor="eng">
             Английский
           </label>
-          <img src={britain} alt="britain" />
+          <Image src={britain} alt="britain" />
         </div>
       </div>
 
@@ -46,7 +46,7 @@ function Sidebar() {
                   <label htmlFor="all">Выбрать все</label>
                 </div>
                 <button>
-                  <img src={deleteIcon} alt="" />
+                  <Image src={deleteIcon} alt="" />
                 </button>
               </li>
               <li className="flex items-center justify-between mb-2.5">
@@ -84,7 +84,7 @@ function Sidebar() {
                   <label htmlFor="all2">Выбрать все</label>
                 </div>
                 <button>
-                  <img src={deleteIcon} alt="" />
+                  <Image src={deleteIcon} alt="" />
                 </button>
               </li>
               <li className="flex items-center justify-between mb-2.5">
@@ -122,12 +122,12 @@ function Sidebar() {
           <div className="sidebar__summary flex items-center">
             <p>от</p>
             <input type="number" defaultValue={10} />
-            <img src={dollar} alt="" />
+            <Image src={dollar} alt="" />
           </div>
           <div className="sidebar__summary flex items-center">
             <p>до</p>
             <input type="number" defaultValue={100} />
-            <img src={dollar} alt="" />
+            <Image src={dollar} alt="" />
           </div>
           {/* <ReactSlider
             className="horizontal-slider"
