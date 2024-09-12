@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import arrow from "@/assets/imgs/icons/arrowDown.svg";
 import Card from "./Card";
 import { Button } from "@/ui";
@@ -24,17 +24,37 @@ function CardMain() {
   const cardmainRef = useRef(null);
   const cardmainRefText = useRef(null);
 
-  window.addEventListener("click", (e) => {
-    if (
-      e.target !== menuRef.current &&
-      e.target !== cardmainRef.current &&
-      e.target !== cardmainRefText.current &&
-      e.target !== arrowRef.current &&
-      e.target !== textRef.current
-    ) {
-      setOpen(false);
-    }
-  });
+  // window.addEventListener("click", (e) => {
+  //   if (
+  //     e.target !== menuRef.current &&
+  //     e.target !== cardmainRef.current &&
+  //     e.target !== cardmainRefText.current &&
+  //     e.target !== arrowRef.current &&
+  //     e.target !== textRef.current
+  //   ) {
+  //     setOpen(false);
+  //   }
+  // });
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (
+        e.target !== menuRef.current &&
+        e.target !== cardmainRef.current &&
+        e.target !== cardmainRefText.current &&
+        e.target !== arrowRef.current &&
+        e.target !== textRef.current
+      ) {
+        setOpen(false);
+      }
+    };
+
+    window.addEventListener("click", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("click", handleClickOutside);
+    };
+  }, [open]);
 
   return (
     <section className="cardmain w-full">

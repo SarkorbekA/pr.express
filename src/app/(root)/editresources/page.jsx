@@ -2,7 +2,7 @@
 import Header from "@/components/Header";
 import TopBar from "@/components/TopBar";
 import Image from "next/image";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import systemImg from "@/assets/imgs/png/system-uicons_picture 1.png";
 import google from "@/assets/imgs/png/Group 6887.png";
 import twitter from "@/assets/imgs/png/Group 6890.png";
@@ -17,7 +17,7 @@ import deleteIcon from "@/assets/imgs/icons/delete.svg";
 import plus from "@/assets/imgs/icons/plus.svg";
 import { Button, Text } from "@/ui";
 import Footer from "@/components/Footer";
-import "@/styles/style.scss"
+import "@/styles/style.scss";
 function page() {
   const [open, setOpen] = useState(false);
   const [text, setText] = useState("Выбрать сайты");
@@ -28,17 +28,36 @@ function page() {
   const cardmainRef = useRef(null);
   const cardmainRefText = useRef(null);
 
-  window.addEventListener("click", (e) => {
-    if (
-      e.target !== menuRef.current &&
-      e.target !== cardmainRef.current &&
-      e.target !== cardmainRefText.current &&
-      e.target !== arrowRef.current &&
-      e.target !== textRef.current
-    ) {
-      setOpen(false);
-    }
-  });
+  //   window.addEventListener("click", (e) => {
+  //     if (
+  //       e.target !== menuRef.current &&
+  //       e.target !== cardmainRef.current &&
+  //       e.target !== cardmainRefText.current &&
+  //       e.target !== arrowRef.current &&
+  //       e.target !== textRef.current
+  //     ) {
+  //       setOpen(false);
+  //     }
+  //   });
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (
+        e.target !== menuRef.current &&
+        e.target !== cardmainRef.current &&
+        e.target !== cardmainRefText.current &&
+        e.target !== arrowRef.current &&
+        e.target !== textRef.current
+      ) {
+        setOpen(false);
+      }
+    };
+
+    window.addEventListener("click", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("click", handleClickOutside);
+    };
+  }, [open]);
   return (
     <div>
       <Header />
