@@ -721,6 +721,7 @@
     display: flex;
     flex-direction: column;
     &Item {
+      cursor: pointer;
       @include resl("padding", 40px);
       @include resl("padding-bottom", 30px);
       @include resl("padding-top", 30px);
