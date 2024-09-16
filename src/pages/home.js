@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import arrow from "@/assets/imgs/icons/arrowDown.svg";
 import Header from "@/components/Header";
 import TopBar from "@/components/TopBar";
-import Sidebar from "@/components/Sidebar";
+import Sidebar from "@/components/Sidebar/Sidebar";
 import { Button } from "@/ui";
 import Image from "next/image";
 import Card from "@/components/Cards/Card";

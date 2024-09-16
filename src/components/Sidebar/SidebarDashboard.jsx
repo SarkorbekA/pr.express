@@ -7,7 +7,7 @@ import deleteIcon from "@/assets/imgs/icons/delete.svg";
 import dollar from "@/assets/imgs/icons/dollar.svg";
 import Image from "next/image";
 
-function Sidebar() {
+function SidebarDashboard() {
   const [value1, setValue1] = useState(10);
   const [value2, setValue2] = useState(80);
 
@@ -31,9 +31,9 @@ function Sidebar() {
   };
 
   return (
-    <section className="sidebar">
+    <aside className="sidebar">
       <Text className="sidebar__title mb-5" as="p" text="Выбор языка" />
-      <div className="flex flex-col">
+      <div className="flex flex-col mb-[26px]">
         <div className="flex items-center mb-3.5">
           <input type="radio" id="ru" name="fav_language" defaultValue="ru" />
           <span className="custom-radio"></span>
@@ -49,90 +49,6 @@ function Sidebar() {
             Английский
           </label>
           <img src={britain.src} alt="britain" />
-        </div>
-      </div>
-
-      <div>
-        <input
-          className="faq-drawer__trigger"
-          id="faq-drawer"
-          type="checkbox"
-        />
-        <label className="faq-drawer__title mt-5" htmlFor="faq-drawer">
-          <Text className="sidebar__title" as="p" text="Выбор ресурсов" />
-        </label>
-        <div className="faq-drawer__content-wrapper">
-          <div className="faq-drawer__content">
-            <ul className="sidebar__list">
-              <li className="flex items-center justify-between mb-2.5">
-                <div className="form-group flex items-center">
-                  <input type="checkbox" id="all" />
-                  <label htmlFor="all">Выбрать все</label>
-                </div>
-                <button>
-                  <Image src={deleteIcon} alt="" />
-                </button>
-              </li>
-              <li className="flex items-center justify-between mb-2.5">
-                <div className="form-group flex items-center">
-                  <input type="checkbox" id="category" />
-                  <label htmlFor="category">Ресурс такой-то</label>
-                </div>
-              </li>
-              <li className="flex items-center justify-between mb-2.5">
-                <div className="form-group flex items-center">
-                  <input type="checkbox" id="category2" />
-                  <label htmlFor="category2">Ресурс такой-то</label>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <input
-          className="faq-drawer__trigger"
-          id="category-select"
-          type="checkbox"
-        />
-        <label className="faq-drawer__title" htmlFor="category-select">
-          <Text className="sidebar__title" as="p" text="Выбор категории" />
-        </label>
-        <div className="faq-drawer__content-wrapper">
-          <div className="faq-drawer__content">
-            <ul className="sidebar__list">
-              <li className="flex items-center justify-between mb-2.5">
-                <div className="form-group flex items-center">
-                  <input type="checkbox" id="all2" />
-                  <label htmlFor="all2">Выбрать все</label>
-                </div>
-                <button>
-                  <Image src={deleteIcon} alt="" />
-                </button>
-              </li>
-              <li className="flex items-center justify-between mb-2.5">
-                <div className="form-group flex items-center">
-                  <input type="checkbox" id="category6" />
-                  <label htmlFor="category6">Категория такая-то</label>
-                </div>
-              </li>
-              <li className="flex items-center justify-between mb-2.5">
-                <div className="form-group flex items-center">
-                  <input type="checkbox" id="category4" />
-                  <label htmlFor="category4">
-                    Категория такая-то, в две строки
-                  </label>
-                </div>
-              </li>
-              <li className="flex items-center justify-between mb-2.5">
-                <div className="form-group flex items-center">
-                  <input type="checkbox" id="category3" />
-                  <label htmlFor="category3">Категория такая-то</label>
-                </div>
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
 
@@ -184,7 +100,7 @@ function Sidebar() {
             <Image src={dollar} alt="" />
           </div>
         </div>
-        <div className={"rangeContainer"}>
+        <div className={"rangeContainerBox"}>
           <input
             type="range"
             min="0"
@@ -204,7 +120,8 @@ function Sidebar() {
             style={gradientStyle}
           />
         </div>
-        {/* <div className="flex flex-col mb-[20px]">
+        <Text className="text-[16px] font-semibold mb-[20px] text-[#f22e2e]" as="p" text="Комиссия 35%" />
+        <div className="flex flex-col mb-[20px]">
           <label className="font-medium text-[16px] text-[#333] mb-[10px] flex">
             Токен
           </label>
@@ -231,7 +148,7 @@ function Sidebar() {
             placeholder="12345efsrgdftgyhu"
           />
         </div>
-        <button className="sidebar__btn sidebar__btn-apply">
+        <button className="sidebar__btn sidebar__btn-sync mb-[30px]">
           Синхронизация
         </button>
         <Text
@@ -269,12 +186,10 @@ function Sidebar() {
             <label htmlFor="category22">Категория такая-то</label>
           </div>
         </li>
-        <button className="sidebar__btn sidebar__btn-reset">Добавить ресурс</button> */}
-        <button className="sidebar__btn sidebar__btn-apply">Применить</button>
-        <button className="sidebar__btn sidebar__btn-reset">Сбросить</button>
+        <button className="sidebar__btn sidebar__btn-reset mt-[30px]">Добавить ресурс</button>
       </div>
-    </section>
+    </aside>
   );
 }
 
-export default Sidebar;
+export default SidebarDashboard;

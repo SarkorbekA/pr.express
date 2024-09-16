@@ -3,9 +3,9 @@ import Header from "@/components/Header";
 // import DashboardTable from "@/components/Table/DashboardTable";
 import TopBar from "@/components/TopBar";
 import React from "react";
-import Sidebar from "@/components/Sidebar";
 import CardMain from "@/components/Cards/CardMain";
 import Head from "next/head";
+import SidebarDashboard from "@/components/Sidebar/SidebarDashboard";
 
 function dashboard() {
   return (
@@ -20,7 +20,7 @@ function dashboard() {
       <TopBar />
       <main className="mb-20">
         <div className="container-box flex">
-          <Sidebar />
+          <SidebarDashboard />
           <CardMain />
         </div>
       </main>
