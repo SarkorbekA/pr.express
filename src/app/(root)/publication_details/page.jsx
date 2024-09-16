@@ -13,10 +13,10 @@ import warning from "@/assets/imgs/icons/warning.svg";
 import sort from "@/assets/imgs/icons/sort.svg";
 import link from "@/assets/imgs/icons/link.svg";
 import done from "@/assets/imgs/icons/done.svg";
-import google from "@/assets/imgs/svg/google.svg"
-import vk from "@/assets/imgs/svg/vk.svg"
-import twitter from "@/assets/imgs/svg/twitter.svg"
-import medium from "@/assets/imgs/svg/medium.svg"
+import google from "@/assets/imgs/svg/google.svg";
+import vk from "@/assets/imgs/svg/vk.svg";
+import twitter from "@/assets/imgs/svg/twitter.svg";
+import medium from "@/assets/imgs/svg/medium.svg";
 import DashboardTable from "@/components/Table/DashboardTable";
 import TopBar from "@/components/TopBar";
 import "@/styles/style.scss";
@@ -29,7 +29,7 @@ function page() {
       <Header />
       <TopBar />
       <main>
-        <section className="dashboard w-full container-box">
+        <section className="dashboard publications w-full container-box">
           <div className="primary w-full py-7 px-10 mt-5">
             <Text
               className="text-[#333] font-medium text-[22px] mb-10"
@@ -37,33 +37,85 @@ function page() {
               text="№34567"
             />
             <div className="flex items-center justify-between w-full mb-2.5 ml-[24px]">
-                <div className="flex items-center font-medium text-[#333]">
-                    <Text className="text-[16px]" as="p" text="Заголовок" />
-                    <Text className="bg-[#333] me-1 ms-5 rounded-[16px] text-[12px] text-white px-[13px] py-[3px]" as="p" text="23" />
-                    <Image src={sort} />
-                </div>
-                <Text className="relative dashboard__relative-77 text-[16px] font-medium text-[#333]" as="p" text="Сумма" />
-                <Text className="relative dashboard__relative-70 text-[16px] font-medium text-[#333]" as="p" text="Дата / Время" />
-                <Text className="relative dashboard__relative-100 text-[16px] font-medium text-[#333]" as="p" text="Ресурсы" />
-                <Text className="text-[16px] relative dashboard__relative-50 font-medium text-[#333]" as="p" text="Доп. услуги" />
+              <div className="flex items-center font-medium text-[#333]">
+                <Text className="text-[16px]" as="p" text="Заголовок" />
+                <Text
+                  className="bg-[#333] me-1 ms-5 rounded-[16px] text-[12px] text-white px-[13px] py-[3px]"
+                  as="p"
+                  text="23"
+                />
+                <Image src={sort} />
+              </div>
+              <Text
+                className="relative dashboard__relative-77 text-[16px] font-medium text-[#333]"
+                as="p"
+                text="Сумма"
+              />
+              <Text
+                className="relative dashboard__relative-70 text-[16px] font-medium text-[#333]"
+                as="p"
+                text="Дата / Время"
+              />
+              <Text
+                className="relative dashboard__relative-100 text-[16px] font-medium text-[#333]"
+                as="p"
+                text="Ресурсы"
+              />
+              <Text
+                className="text-[16px] relative dashboard__relative-50 font-medium text-[#333]"
+                as="p"
+                text="Доп. услуги"
+              />
             </div>
             <div className="px-[30px] py-[20px] bg-[#f9f9f9] rounded-[20px] mb-[35px]">
-                <div className="flex items-center justify-between">
-                    <Text className="text-[16px] font-normal text-[#333]" as="p" text="Заголовок" />
-                    <Text className="text-[16px] font-normal text-[#333]" as="p" text="189.00 $" />
-                    <Text className="text-[16px] font-normal text-[#333]" as="p" text="01.01.2020" />
-                    <Text className="text-[16px] font-normal text-[#333]" as="p" text="234" />
-                    <ul className="flex items-center gap-2">
-                        <li><Image className="w-[40px] h-[40px]" src={google} /></li>
-                        <li><Image className="w-[40px] h-[40px]" src={vk} /></li>
-                        <li><Image className="w-[40px] h-[40px]" src={twitter} /></li>
-                        <li><Image className="w-[40px] h-[40px]" src={medium} /></li>
-                    </ul>
-                </div>
-                <div className="flex items-center mt-[20px] pt-[20px] dashboard__border border-[#626262] ">
-                    <Text className="text-[16px] me-[40px] font-normal text-[#f22e2e]" as="p" text="Отклонено" />
-                    <Text className="text-[16px] me-[40px] font-normal text-[#333]" as="p" text="С другой стороны, консультация с широким активом создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса переосмысления внешнеэкономических политик" />
-                </div>
+              <div className="flex items-center justify-between">
+                <Text
+                  className="text-[16px] font-normal text-[#333]"
+                  as="p"
+                  text="Заголовок"
+                />
+                <Text
+                  className="text-[16px] font-normal text-[#333]"
+                  as="p"
+                  text="189.00 $"
+                />
+                <Text
+                  className="text-[16px] font-normal text-[#333]"
+                  as="p"
+                  text="01.01.2020"
+                />
+                <Text
+                  className="text-[16px] font-normal text-[#333]"
+                  as="p"
+                  text="234"
+                />
+                <ul className="flex items-center gap-2">
+                  <li>
+                    <Image className="w-[40px] h-[40px]" src={google} />
+                  </li>
+                  <li>
+                    <Image className="w-[40px] h-[40px]" src={vk} />
+                  </li>
+                  <li>
+                    <Image className="w-[40px] h-[40px]" src={twitter} />
+                  </li>
+                  <li>
+                    <Image className="w-[40px] h-[40px]" src={medium} />
+                  </li>
+                </ul>
+              </div>
+              <div className="flex items-center mt-[20px] pt-[20px] dashboard__border border-[#626262] ">
+                <Text
+                  className="text-[16px] me-[40px] font-normal text-[#f22e2e]"
+                  as="p"
+                  text="Отклонено"
+                />
+                <Text
+                  className="text-[16px] me-[40px] font-normal text-[#333]"
+                  as="p"
+                  text="С другой стороны, консультация с широким активом создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса переосмысления внешнеэкономических политик"
+                />
+              </div>
             </div>
             <div className="flex items-center justify-between mb-10">
               <Text
@@ -118,13 +170,16 @@ function page() {
                     key={idx}
                     className="flex items-center justify-between w-full bg-[#f9f9f9] text-[#333] font-medium rounded-[20px] px-[30px] py-5 "
                   >
-                    <div className="form-group form-group-table flex items-center mr-[60px]">
-                      <input type="checkbox" id="publicationDetails1" />
-                      {/* <Image className="w-[60px] h-[60px] me-5" src={publication} /> */}
-                      <label htmlFor="publicationDetails1">
+                    <div className="relative form-group form-group-table flex items-center mr-[60px]">
+                      <input type="checkbox" id={`publicationDetails${idx}`} />
+                      <label className="publications__table-label" htmlFor={`publicationDetails${idx}`}>
                         Семантический разбор внешних противодействий не
                         позволил.
                       </label>
+                      <Image
+                        className="absolute w-[60px] h-[60px] me-5 publications__table-img"
+                        src={publication}
+                      />
                     </div>
                     <div className="flex items-center">
                       <Text

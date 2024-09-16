@@ -19,10 +19,11 @@ function TopBar() {
             id="html"
             name="search"
             defaultValue="Поиск по сайтам"
+            defaultChecked
           />
           <span className="custom-radio"></span>
           <label className="topbar__label" htmlFor="html">Поиск по сайтам</label>
-          <input type="radio" id="css" name="search" defaultValue="CSS" />
+          <input type="radio" id="css" name="search" defaultValue="Поиск по категориям" />
           <span className="custom-radio"></span>
           <label htmlFor="css">Поиск по категориям</label>
         </div>

@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { Text } from "@/ui";
 import russian from "@/assets/imgs/icons/russian-federation.svg";
 import britain from "@/assets/imgs/icons/britain.svg";
@@ -7,6 +8,28 @@ import dollar from "@/assets/imgs/icons/dollar.svg";
 import Image from "next/image";
 
 function Sidebar() {
+  const [value1, setValue1] = useState(10);
+  const [value2, setValue2] = useState(80);
+
+  const handleInput1Change = (e) => {
+    setValue1(e.target.value);
+  };
+
+  const handleInput2Change = (e) => {
+    setValue2(e.target.value);
+  };
+
+  const gradientStyle = {
+    background: `linear-gradient(
+      to right, 
+      #ddd ${Math.max(0, Math.min(value1, 100))}%, 
+      #22c55e ${Math.max(0, Math.min(value1, 100))}%, 
+      #22c55e ${Math.max(0, Math.min(value2, 100))}%, 
+      #ddd ${Math.max(0, Math.min(value2, 100))}%
+    )`,
+    zIndex: 1,
+  };
+  
   return (
     <section className="sidebar">
       <Text className="sidebar__title mb-5" as="p" text="Выбор языка" />
@@ -141,6 +164,26 @@ function Sidebar() {
             minDistance={1}
           /> */}
         </div>
+          <div className={"rangeContainer"}>
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value={value1}
+              className={"rangeInput"}
+              onChange={handleInput1Change}
+              style={gradientStyle}
+            />
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value={value2}
+              className={"rangeInput"}
+              onChange={handleInput2Change}
+              style={gradientStyle}
+            />
+          </div>
         <button className="sidebar__btn sidebar__btn-apply">Применить</button>
         <button className="sidebar__btn sidebar__btn-reset">Сбросить</button>
       </div>
