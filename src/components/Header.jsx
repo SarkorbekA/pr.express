@@ -2,21 +2,24 @@
 import logo from "@/assets/imgs/svg/logo.svg";
 import arrow from "@/assets/imgs/icons/arrowDown.svg";
 import line from "@/assets/imgs/svg/Line 165.svg";
-import Image from 'next/image';
+import Image from "next/image";
 import { Button, Logo, Text } from "@/ui";
+import Link from "next/link";
 // import Image from "next/image";
 
 function Header() {
   return (
     <div className="container-box">
       <header className="header flex items-center justify-between">
-        <Logo
-          className="header__logo"
-          width={160}
-          height={30}
-          src={logo}
-          alt="logo"
-        />
+        <Link href="/">
+          <Logo
+            className="header__logo"
+            width={160}
+            height={30}
+            src={logo}
+            alt="logo"
+          />
+        </Link>
         <div className="flex items-center">
           <nav>
             <ul className="flex header__list items-center">
