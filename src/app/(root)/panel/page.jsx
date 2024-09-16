@@ -23,31 +23,44 @@ function page() {
   function getData(period) {
     switch (period) {
       case "Сегодня":
-        return { labels: ["1", "2", "3", "4"], data: [65, 59, 10, 70] };
+        return {
+          labels: ["1", "2", "3", "4"],
+          data: [65, 59, 10, 70], // Birinchi chiziq
+          secondData: [28, 48, 40, 19], // Ikkinchi chiziq
+        };
       case "Вчера":
         return {
           labels: ["1", "2", "3", "4", "5"],
-          data: [65, 59, 80, 86, 40],
+          data: [65, 59, 80, 86, 40], // Birinchi chiziq
+          secondData: [33, 25, 40, 50, 20], // Ikkinchi chiziq
         };
       case "Неделя":
         return {
           labels: ["1", "2", "3", "4", "5", "6"],
-          data: [65, 59, 80, 81, 56, 20],
+          data: [65, 59, 80, 81, 56, 20], // Birinchi chiziq
+          secondData: [42, 30, 45, 70, 60, 30], // Ikkinchi chiziq
         };
       case "Месяц":
         return {
           labels: ["1", "2", "3", "4", "5", "6", "7"],
-          data: [65, 59, 80, 81, 56, 55, 40],
+          data: [65, 59, 80, 81, 56, 55, 40], // Birinchi chiziq
+          secondData: [30, 60, 25, 80, 50, 70, 60], // Ikkinchi chiziq
         };
       case "Год":
         return {
           labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
-          data: [65, 59, 80, 81, 56, 55, 40, 60, 70],
+          data: [65, 59, 80, 81, 56, 55, 40, 60, 70], // Birinchi chiziq
+          secondData: [20, 50, 60, 45, 30, 90, 80, 55, 65], // Ikkinchi chiziq
         };
       default:
-        return { labels: ["1", "2", "3", "4"], data: [65, 59, 10, 70] };
+        return {
+          labels: ["1", "2", "3", "4"],
+          data: [65, 59, 10, 70], // Birinchi chiziq
+          secondData: [28, 48, 40, 19], // Ikkinchi chiziq
+        };
     }
   }
+
   return (
     <div>
       <Header />
