@@ -4,6 +4,7 @@ import icon from "@/assets/imgs/icons/Group 788.svg";
 import dollar from "@/assets/imgs/icons/dollar.svg";
 import infoIcon from "@/assets/imgs/icons/information-circle-contained.svg";
 import { Text, Title } from "@/ui";
+import Image from "next/image";
 function Card() {
   return (
     <div className="cardmain__card">

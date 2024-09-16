@@ -24,18 +24,6 @@ function CardMain() {
   const cardmainRef = useRef(null);
   const cardmainRefText = useRef(null);
 
-  // window.addEventListener("click", (e) => {
-  //   if (
-  //     e.target !== menuRef.current &&
-  //     e.target !== cardmainRef.current &&
-  //     e.target !== cardmainRefText.current &&
-  //     e.target !== arrowRef.current &&
-  //     e.target !== textRef.current
-  //   ) {
-  //     setOpen(false);
-  //   }
-  // });
-
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (
