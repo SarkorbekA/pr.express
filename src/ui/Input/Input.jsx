@@ -12,6 +12,7 @@ export const Input = ({
   innerClass = "",
   className = "",
   isDisabled = false,
+  placeholder = "",
   ...restProps
 }) => {
   return (
@@ -19,6 +20,7 @@ export const Input = ({
       {label && <label>{label}</label>}
       <div className={cn("input__container", innerClass)}>
         <input
+          placeholder={placeholder}
           disabled={isDisabled}
           className={cn(
             "input__field",
